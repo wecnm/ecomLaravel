@@ -11,10 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index');
 
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+
+Route::group(array('prefix' => 'api'),function(){
+	Route::resource('products','productApiController');
+});

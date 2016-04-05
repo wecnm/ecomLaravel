@@ -17,6 +17,7 @@ class CreateProductsTable extends Migration
             $table->string('product_name');
             $table->string('product_desc');
             $table->string('product_detail');
+            $table->double('price',10,2);
             $table->integer('category_id')->unsigned();
             $table->boolean('product_available');
             $table->string('picture_path');
