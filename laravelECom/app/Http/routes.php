@@ -17,6 +17,15 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
+// Api
 Route::group(array('prefix' => 'api'),function(){
-	Route::resource('products','productApiController');
+	Route::resource('categories','categoryApiController',[
+		'only'=>['index']]);
+	Route::resource('products','productApiController',[
+		'only'=>['index']]);
+});
+
+// Admin
+Route::group(array('prefix' => 'admin'),function(){
+	Route::get('/','adminLoginController@index');
 });
