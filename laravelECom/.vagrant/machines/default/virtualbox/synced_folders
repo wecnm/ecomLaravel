@@ -1,1 +1,0 @@
-{"virtualbox":{"/home/vagrant/laravelecom":{"type":null,"mount_options":[],"guestpath":"/home/vagrant/laravelecom","hostpath":"/Users/yangyanhong/Documents/groupProject/wecnm/laravelECom","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/yangyanhong/Documents/groupProject/wecnm/laravelECom","disabled":false,"__vagrantfile":true}}}

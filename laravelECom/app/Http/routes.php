@@ -28,4 +28,6 @@ Route::group(array('prefix' => 'api'),function(){
 // Admin
 Route::group(array('prefix' => 'admin'),function(){
 	Route::get('/','adminLoginController@index');
+	Route::post('/login','adminLoginController@login');
+	Route::post('/logout','adminLoginController@logout');
 });
