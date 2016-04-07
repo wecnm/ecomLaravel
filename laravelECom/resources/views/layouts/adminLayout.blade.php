@@ -39,7 +39,7 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="">
                     HappyBuy
                 </a>
             </div>
@@ -48,7 +48,6 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     @if (Auth::guard('admin')->check())
-                        <li><a href="{{ url('/') }}">Back To HappyBuy</a></li>
                         <li><a href="{{ url('admin/main') }}">Product List</a></li>
                         <li><a href="{{ url('admin/new') }}">New Product</a></li>
                     @endif

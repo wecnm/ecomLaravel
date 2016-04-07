@@ -8,8 +8,15 @@ use App\Http\Requests;
 
 use App\Product;
 
+use Auth;
+
 class adminProductListController extends Controller
 {
+	public function __construct()
+	{
+		$this->middleware('admin');
+	}
+
     public function main()
     {
     	$products = Product::all();
