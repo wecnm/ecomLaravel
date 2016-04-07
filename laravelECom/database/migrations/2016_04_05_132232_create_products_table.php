@@ -23,6 +23,13 @@ class CreateProductsTable extends Migration
             $table->string('picture_path');
             $table->timestamps();
         });
+
+        Schema::table('products', function ($table) {
+            $table->foreign('category_id')
+                  ->references('category_id')
+                  ->on('categories')
+                  ->onDelete('cascade');
+        });
     }
 
     /**
@@ -32,9 +39,6 @@ class CreateProductsTable extends Migration
      */
     public function down()
     {
-        Schema::table('products',function($table){
-            $table->dropForeign('category_id');
-        });        
         Schema::drop('products');
     }
 }

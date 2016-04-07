@@ -8,6 +8,8 @@ use App\Http\Requests;
 
 use Auth;
 
+use App\adminUser;
+
 class adminLoginController extends Controller
 {
     public function index(){
@@ -15,11 +17,14 @@ class adminLoginController extends Controller
     }
 
     public function login(Request $request){
-    	return $request;
+    	if(Auth::guard('admin')->attempt(['email' => $request->email,'password' => $request->password,])){
+    		return redirect('admin/main');
+    	}
+    	return redirect('admin')->withErrors(['email' => 'wrong info']);
     }
 
     public function logout(){
-    	Auth::logout();
+    	Auth::guard('admin')->logout();
     	return redirect('/');
     }
 }

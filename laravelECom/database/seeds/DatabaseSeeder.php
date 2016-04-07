@@ -13,6 +13,8 @@ class DatabaseSeeder extends Seeder
     {
     	 //Eloquent::unguard();
          $this->call(productSeeder::class);
+         $this->call(adminUserSeed::class);
          $this->command->info('seed generated');
+
     }
 }

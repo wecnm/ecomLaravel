@@ -18,12 +18,6 @@ class CreateCategoriesTable extends Migration
             $table->timestamps();
         });
 
-        Schema::table('products', function ($table) {
-            $table->foreign('category_id')
-                  ->references('category_id')
-                  ->on('categories')
-                  ->onDelete('cascade');
-        });
     }
 
     /**
@@ -33,7 +27,7 @@ class CreateCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::table('categories',function($table){
+        Schema::table('products',function($table){
             $table->dropForeign('category_id');
         });
         Schema::drop('categories');

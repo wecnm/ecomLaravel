@@ -29,5 +29,11 @@ Route::group(array('prefix' => 'api'),function(){
 Route::group(array('prefix' => 'admin'),function(){
 	Route::get('/','adminLoginController@index');
 	Route::post('/login','adminLoginController@login');
-	Route::post('/logout','adminLoginController@logout');
+	Route::get('/logout','adminLoginController@logout');
+	Route::get('/main','adminProductListController@main');
+	Route::get('/new','adminProductListController@newProduct');
+
+	Route::post('/main','adminProductListController@edit');
+	Route::post('/new','adminProductListController@create');
+	Route::post('/update','adminProductListController@update');
 });
