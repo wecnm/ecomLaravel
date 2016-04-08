@@ -22,9 +22,7 @@ class CreateProductsTable extends Migration
             $table->boolean('product_available');
             $table->string('picture_path');
             $table->timestamps();
-        });
 
-        Schema::table('products', function ($table) {
             $table->foreign('category_id')
                   ->references('category_id')
                   ->on('categories')

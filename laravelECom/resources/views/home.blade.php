@@ -15,8 +15,8 @@
                 <div class="col-sm-4 col-lg-4 col-md-4" ng-repeat="product in products">
                     
                     <img src="..." class="img-thumbnail" style="width:100%">
-                    <h4 class="pull-right"><% product.price %></h4>
-                    <h4><a href=""><% product.product_name %></a></h4>
+                    <h4 class="pull-right">$<% product.price %></h4>
+                    <h4><a ng-href="{{url('product/<%product.product_id%>')}}"><% product.product_name %></a></h4>
                     <p><% product.product_desc %></p>
     
                 </div>

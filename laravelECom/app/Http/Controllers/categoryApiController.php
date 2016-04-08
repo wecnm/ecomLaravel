@@ -12,6 +12,5 @@ class categoryApiController extends Controller
 {
     public function index(){
     	return Category::all();
-    	//return Response::json(Category::all());
     }
 }
