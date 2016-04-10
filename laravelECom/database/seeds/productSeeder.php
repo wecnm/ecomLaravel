@@ -12,6 +12,8 @@ class productSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('carts')->delete();
+
     	DB::table('products')->delete();
 
     	DB::table('categories')->delete();

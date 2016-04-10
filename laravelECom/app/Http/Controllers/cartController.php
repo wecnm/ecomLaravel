@@ -10,6 +10,8 @@ use App\Cart;
 
 use App\Product;
 
+use Mail;
+
 use Auth;
 
 class cartController extends Controller
@@ -43,6 +45,11 @@ class cartController extends Controller
     		Cart::where('product_id',$request->productId)->delete();
     		return redirect('cart');
     	}elseif($request->action === 'Check Out'){
+            $products = Cart::where('user_id',Auth::user()->id)->get()->toArray();
+            Mail::send(['html'=>'order'],array('products'=>$products),function($message){
+                $message->from('yyh.fanatic@gmail.com','HappyBuy');
+                $message->to(Auth::user()->email,Auth::user()->name);
+            });
     		Cart::where('user_id',Auth::user()->id)->delete();
     		return redirect('cart/checkout');
     	}

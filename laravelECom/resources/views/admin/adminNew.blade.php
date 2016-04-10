@@ -10,6 +10,7 @@
 	                <div class="panel-body">
 
 						{!! Form::open(['url'=>'admin/new']) !!}
+
 							<div class="row" style="margin-top:20px">
 				                <div class="col-xs-12">
 				                    <h4>New Product</h4>
@@ -21,7 +22,7 @@
 				                    {!! Form::label(null,'Product Name') !!}
 				                </div>
 				                <div class="col-xs-10">
-				                    {!! Form::text('product_name',null,['size'=>100]) !!}
+				                    {!! Form::text('product_name',null,['class'=>'form-control']) !!}
 				                </div>
 				            </div>
 
@@ -30,7 +31,7 @@
 				                    {!! Form::label(null,'Description') !!}
 				                </div>
 				                <div class="col-xs-10">
-				                    {!! Form::text('product_desc',null,['size'=>100]) !!}
+				                    {!! Form::text('product_desc',null,['class'=>'form-control']) !!}
 				                </div>
 				            </div>
 
@@ -39,7 +40,7 @@
 				                    {!! Form::label(null,'Detail') !!}
 				                </div>
 				                <div class="col-xs-10">
-				                    {!! Form::text('product_detail',null,['size'=>100]) !!}
+				                    {!! Form::text('product_detail',null,['class'=>'form-control']) !!}
 				                </div>
 				            </div>
 
@@ -48,7 +49,7 @@
 				                    {!! Form::label(null,'CategoryId') !!}
 				                </div>
 				                <div class="col-xs-10">
-				                    {!! Form::number('category_id',null,['size'=>100]) !!}
+				                    {!! Form::number('category_id',null,['class'=>'form-control']) !!}
 				                </div>
 				            </div>
 
@@ -57,7 +58,7 @@
 				                    {!! Form::label(null,'Product Price') !!}
 				                </div>
 				                <div class="col-xs-10">
-									  <input type="float" name="price" value="">
+									  <input class="form-control" type="float" name="price" value="">
 				                </div>
 				            </div>
 
@@ -66,7 +67,7 @@
 				                    {!! Form::label(null,'Picture Path') !!}
 				                </div>
 				                <div class="col-xs-10">
-				                    {!! Form::text('picture_path',null,['size'=>100]) !!}
+				                    {!! Form::text('picture_path',null,['class'=>'form-control']) !!}
 				                </div>
 				            </div>
 
@@ -85,13 +86,12 @@
 				                </div>
 				            </div>
 
-
+						
 							{!! Form::submit('Add',['name'=>'action','class'=>'btn btn-primary-outline btn-lg btn-block','style'=>'margin-top: 10px']) !!}
 
 							@include('errors.validationError')
 							<!-- this place should have error handler -->
 
-						
 						{!! Form::close() !!}
 
 					</div>

@@ -12,7 +12,7 @@
 						{!! Form::open(['url'=>'admin/main']) !!}
 
 							<div class="row" style="margin-top:5px">
-				                    <div class="col-xs-12">
+				                    <div class="col-xs-12 table-responsive">
 				                        <table class="table">
 				                            <thead>
 												@if(count($products) == 0)
